@@ -4,11 +4,11 @@ const a$ = new Observable((subscriber) => {
   setTimeout(() => {
     subscriber.next('A');
     subscriber.complete();
-  }, 3000);
+  }, 5000);
 
   //Teardown logic
   return () => {
-    console.log('Teardown 1');
+    console.log('Teardown A');
   };
 });
 
@@ -19,7 +19,7 @@ const b$ = new Observable((subscriber) => {
 
   //Teardown logic
   return () => {
-    console.log('Teardown 2');
+    console.log('Teardown B');
   };
 });
 
