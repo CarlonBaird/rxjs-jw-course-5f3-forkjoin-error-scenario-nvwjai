@@ -13,4 +13,7 @@ const b$ = new Observable((subscriber) => {
   }, 3000);
 });
 
-forkJoin([a$, b$]);
+forkJoin([a$, b$]).subscribe({
+  next: (value) => console.log(value),
+  error: (err) => console.log('Error:', err),
+});
